@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header {
+    flex: 0 0 auto;
+
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    flex: 0 0 250px;
+
+
+}
+
+.main {
+    flex: 1;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+.toggle-sidebar-button:hover {
+    cursor: pointer;
+}
+
+select {
+
+    appearance: none; /* 移除默认的下拉箭头 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    border: none;
+    padding: 0px 0px;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: inherit;
+    outline: none;
+}
+
+/* 为了适应不同浏览器 */
+select::-ms-expand {
+    display: none;
+}
+
+/* 自定义下拉箭头 */
+/*.select-wrapper {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    width: 200px; !* 调整宽度 *!*/
+/*}*/
+
+.select-wrapper::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* 悬停和焦点状态 */
+select:hover,
+select:focus {
+    background-color: #f8f8f8;
+}
